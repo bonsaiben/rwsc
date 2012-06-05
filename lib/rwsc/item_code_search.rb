@@ -30,7 +30,7 @@ module Rwsc
     # == Additional Rakuten web service call option
     ADD_RWSC_OPTS = {
       :version => CONST::API_VERSION,
-      :operation => OPERATION::ITEM_SEARCH,
+      :operation => OPERATION::ITEM_CODE_SEARCH,
     }
 
     # == get additional Rakuten web service call option
