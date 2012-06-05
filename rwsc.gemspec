@@ -13,14 +13,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
-  s.files = [
-    '[A-Z]*',
-    'bin/**/*',
-    'lib/**/*.rb',
-    'test/**/*.rb',
-    'doc/**/*',
-    'spec/**/*.rb',
-  ]
+  s.files = `git ls-files`.split("\n")
   s.homepage = "http://wiki.github.com/byplayer/rwsc"
   s.rdoc_options = ["--charset=UTF-8", "--line-numbers", "--inline-source",
                     "--main", "README.rdoc", "-c UTF-8"]
