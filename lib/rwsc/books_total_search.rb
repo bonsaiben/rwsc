@@ -21,11 +21,13 @@ module Rwsc
                     :affiliateId,
                     :keyword,
                     :booksGenreId,
+                    :isbnjan,
                     :hits,
                     :page,
                     :availability,
                     :outOfStockFlag,
                     :sort,
+                    :limitedFlag,
                     :field,
                     :carrier,
                     :orFlag,
@@ -38,7 +40,7 @@ module Rwsc
       ACCEPT_ITEMS
     end
 
-    API_VERSION = '2011-01-27'
+    API_VERSION = '2011-12-01'
     # == Additional Rakuten web service call option
     ADD_RWSC_OPTS = {
       :version => self::API_VERSION,
