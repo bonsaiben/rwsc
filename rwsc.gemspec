@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
-  s.files = FileList[
+  s.files = [
     '[A-Z]*',
     'bin/**/*',
     'lib/**/*.rb',
