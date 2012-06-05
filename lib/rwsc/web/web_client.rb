@@ -59,6 +59,7 @@ module Rwsc
         parse_status()
         parse_args()
         parse_common_info()
+        parse_item()
         parse_items()
 
         @result_item
@@ -107,6 +108,25 @@ module Rwsc
             first_item_content(
               "/Response/Body/#{@operation[0,1].downcase + @operation[1,@operation.length]}:#{@operation}/#{xml_tag}"))
         end
+      end
+
+      # == parse item
+      def parse_item()
+        item = nil
+
+        @doc.xpath("/Response/Body/#{@operation[0,1].downcase + @operation[1,@operation.length]}:#{@operation}/Item",
+                  @namespaces).each do |i|
+          item = ResultItem.new
+
+          i.children.each do |element|
+
+            item.send("#{Rwsc::Utils::StringUtils.underscore(element.name)}=",
+                      element.content)
+          end
+
+        end
+
+        @result_item.item = item
       end
 
       # == parse items
